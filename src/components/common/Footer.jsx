@@ -193,7 +193,7 @@ export default function Footer() {
 
               <li>
                 <a href="mailto:office@thread-affair.com" title="E-mail us">
-                  <i class="fa-regular fa-envelope"></i>
+                  <i className="fa-regular fa-envelope"></i>
                   Email
                 </a>
               </li>
