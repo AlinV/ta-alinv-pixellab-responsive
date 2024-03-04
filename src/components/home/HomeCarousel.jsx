@@ -27,9 +27,9 @@ export default function HomeCarousel() {
           <ul className="glide__slides">
             {imagePaths.map((imagePath, index) => {
               return (
-                <li key={index}>
+                <li key={index} className="glide__slide">
                   <picture>
-                    <img src={imagePath} alt="" />
+                    <img src={imagePath} alt=""></img>
                   </picture>
                 </li>
               );

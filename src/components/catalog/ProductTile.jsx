@@ -1,21 +1,32 @@
-export default function ProductTile() {
+export default function ProductTile({ images = {} }) {
+  const { main: mainImage, alt: altImage } = images;
+
   return (
     <article className="product-tile">
-      <header className="product-tile-header position-relative">
-        <a href="/" tile="Thread Affair Monochrome Suit">
-          <picture>
-            <img
-              src="/images/products/product-01a.jpg"
-              alt="Thread Affair Monochrome Suit"
-            />
-          </picture>
+      <header className="product-tile-header">
+        <a
+          href="/"
+          tile="Thread Affair Monochrome Suit"
+          className="product-tile-image"
+        >
+          {mainImage ? (
+            <picture className="main">
+              <img src={mainImage} alt="Thread Affair Monochrome Suit" />
+            </picture>
+          ) : null}
+
+          {altImage ? (
+            <picture className="alt">
+              <img src={altImage} alt="Thread Affair Monochrome Suit" />
+            </picture>
+          ) : null}
         </a>
 
-        <span className="badge badge-primary d-none d-lg-inline-flex">%</span>
+        <span className="badge badge-primary">%</span>
 
         <h1 className="product-tile-title">
           <a href="/" title="Thread Affair Monochrome Suit">
-            <span>Thread Affair</span> <span>Monochrome</span> Suit
+            Thread Affair Monochrome Suit
           </a>
         </h1>
 
@@ -26,13 +37,7 @@ export default function ProductTile() {
         </h2>
       </header>
 
-      <section className="product-tile-content">
-        <span className="product-catalog-price">399.00</span>
-
-        <span className="product-price">
-          Usd <span>270.00</span>
-        </span>
-      </section>
+      <section className="product-tile-content">{/* add pricing */}</section>
 
       <footer className="product-tile-footer">
         <button className="button button-primary">Add to Cart</button>
